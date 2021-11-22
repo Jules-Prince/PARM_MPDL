@@ -208,25 +208,246 @@ end TCL_Generic;
     <a name="clabel" val=""/>
     <a name="clabelfont" val="SansSerif bold 16"/>
     <a name="clabelup" val="east"/>
-    <comp lib="0" loc="(210,100)" name="Pin">
-      <a name="label" val="Flags_In"/>
-      <a name="width" val="4"/>
-    </comp>
-    <comp lib="0" loc="(210,140)" name="Pin">
-      <a name="label" val="Clk"/>
-    </comp>
-    <comp lib="0" loc="(210,180)" name="Pin">
-      <a name="label" val="Rst"/>
-    </comp>
-    <comp lib="0" loc="(210,60)" name="Pin">
+    <comp lib="0" loc="(200,100)" name="Pin">
       <a name="label" val="Update_Mask"/>
       <a name="width" val="4"/>
     </comp>
-    <comp lib="0" loc="(560,100)" name="Pin">
+    <comp lib="0" loc="(200,200)" name="Pin">
+      <a name="label" val="Flags_In"/>
+      <a name="width" val="4"/>
+    </comp>
+    <comp lib="0" loc="(200,270)" name="Pin">
+      <a name="label" val="Rst"/>
+    </comp>
+    <comp lib="0" loc="(200,320)" name="Pin">
+      <a name="label" val="Clk"/>
+    </comp>
+    <comp lib="0" loc="(220,100)" name="Splitter">
+      <a name="fanout" val="4"/>
+      <a name="incoming" val="4"/>
+    </comp>
+    <comp lib="0" loc="(220,200)" name="Splitter">
+      <a name="fanout" val="4"/>
+      <a name="incoming" val="4"/>
+    </comp>
+    <comp lib="0" loc="(290,100)" name="Tunnel">
+      <a name="label" val="Update_Mask2"/>
+      <a name="labelfont" val="SansSerif bold 11"/>
+    </comp>
+    <comp lib="0" loc="(290,120)" name="Tunnel">
+      <a name="label" val="Update_Mask3"/>
+      <a name="labelfont" val="SansSerif bold 11"/>
+    </comp>
+    <comp lib="0" loc="(290,160)" name="Tunnel">
+      <a name="label" val="Flags_In0"/>
+      <a name="labelfont" val="SansSerif bold 11"/>
+    </comp>
+    <comp lib="0" loc="(290,180)" name="Tunnel">
+      <a name="label" val="Flags_In1"/>
+      <a name="labelfont" val="SansSerif bold 11"/>
+    </comp>
+    <comp lib="0" loc="(290,200)" name="Tunnel">
+      <a name="label" val="Flags_In2"/>
+      <a name="labelfont" val="SansSerif bold 11"/>
+    </comp>
+    <comp lib="0" loc="(290,220)" name="Tunnel">
+      <a name="label" val="Flags_In3"/>
+      <a name="labelfont" val="SansSerif bold 11"/>
+    </comp>
+    <comp lib="0" loc="(290,60)" name="Tunnel">
+      <a name="label" val="Update_Mask0"/>
+      <a name="labelfont" val="SansSerif bold 11"/>
+    </comp>
+    <comp lib="0" loc="(290,80)" name="Tunnel">
+      <a name="label" val="Update_Mask1"/>
+      <a name="labelfont" val="SansSerif bold 11"/>
+    </comp>
+    <comp lib="0" loc="(320,270)" name="Tunnel">
+      <a name="label" val="Rst"/>
+      <a name="labelfont" val="SansSerif bold 11"/>
+    </comp>
+    <comp lib="0" loc="(320,320)" name="Tunnel">
+      <a name="label" val="Clk"/>
+      <a name="labelfont" val="SansSerif bold 11"/>
+    </comp>
+    <comp lib="0" loc="(530,110)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="Update_Mask0"/>
+      <a name="labelfont" val="SansSerif bold 11"/>
+    </comp>
+    <comp lib="0" loc="(530,130)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="Clk"/>
+      <a name="labelfont" val="SansSerif bold 11"/>
+    </comp>
+    <comp lib="0" loc="(530,210)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="Flags_In1"/>
+      <a name="labelfont" val="SansSerif bold 11"/>
+    </comp>
+    <comp lib="0" loc="(530,230)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="Update_Mask1"/>
+      <a name="labelfont" val="SansSerif bold 11"/>
+    </comp>
+    <comp lib="0" loc="(530,250)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="Clk"/>
+      <a name="labelfont" val="SansSerif bold 11"/>
+    </comp>
+    <comp lib="0" loc="(530,330)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="Flags_In2"/>
+      <a name="labelfont" val="SansSerif bold 11"/>
+    </comp>
+    <comp lib="0" loc="(530,350)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="Update_Mask2"/>
+      <a name="labelfont" val="SansSerif bold 11"/>
+    </comp>
+    <comp lib="0" loc="(530,370)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="Clk"/>
+      <a name="labelfont" val="SansSerif bold 11"/>
+    </comp>
+    <comp lib="0" loc="(530,450)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="Flags_In3"/>
+      <a name="labelfont" val="SansSerif bold 11"/>
+    </comp>
+    <comp lib="0" loc="(530,470)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="Update_Mask3"/>
+      <a name="labelfont" val="SansSerif bold 11"/>
+    </comp>
+    <comp lib="0" loc="(530,490)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="Clk"/>
+      <a name="labelfont" val="SansSerif bold 11"/>
+    </comp>
+    <comp lib="0" loc="(530,90)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="Flags_In0"/>
+      <a name="labelfont" val="SansSerif bold 11"/>
+    </comp>
+    <comp lib="0" loc="(560,150)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="label" val="Rst"/>
+      <a name="labelfont" val="SansSerif bold 11"/>
+    </comp>
+    <comp lib="0" loc="(560,270)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="label" val="Rst"/>
+      <a name="labelfont" val="SansSerif bold 11"/>
+    </comp>
+    <comp lib="0" loc="(560,390)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="label" val="Rst"/>
+      <a name="labelfont" val="SansSerif bold 11"/>
+    </comp>
+    <comp lib="0" loc="(560,510)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="label" val="Rst"/>
+      <a name="labelfont" val="SansSerif bold 11"/>
+    </comp>
+    <comp lib="0" loc="(590,210)" name="Tunnel">
+      <a name="label" val="Registre1"/>
+      <a name="labelfont" val="SansSerif bold 11"/>
+    </comp>
+    <comp lib="0" loc="(590,330)" name="Tunnel">
+      <a name="label" val="Registre2"/>
+      <a name="labelfont" val="SansSerif bold 11"/>
+    </comp>
+    <comp lib="0" loc="(590,450)" name="Tunnel">
+      <a name="label" val="Registre3"/>
+      <a name="labelfont" val="SansSerif bold 11"/>
+    </comp>
+    <comp lib="0" loc="(590,90)" name="Tunnel">
+      <a name="label" val="Registre0"/>
+      <a name="labelfont" val="SansSerif bold 11"/>
+    </comp>
+    <comp lib="0" loc="(780,110)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="Registre1"/>
+      <a name="labelfont" val="SansSerif bold 11"/>
+    </comp>
+    <comp lib="0" loc="(780,130)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="Registre2"/>
+      <a name="labelfont" val="SansSerif bold 11"/>
+    </comp>
+    <comp lib="0" loc="(780,150)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="Registre3"/>
+      <a name="labelfont" val="SansSerif bold 11"/>
+    </comp>
+    <comp lib="0" loc="(780,90)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="Registre0"/>
+      <a name="labelfont" val="SansSerif bold 11"/>
+    </comp>
+    <comp lib="0" loc="(840,80)" name="Splitter">
+      <a name="facing" val="west"/>
+      <a name="fanout" val="4"/>
+      <a name="incoming" val="4"/>
+    </comp>
+    <comp lib="0" loc="(850,70)" name="Pin">
       <a name="facing" val="west"/>
       <a name="label" val="Flags_Out"/>
       <a name="output" val="true"/>
       <a name="width" val="4"/>
     </comp>
+    <comp lib="4" loc="(530,180)" name="Register">
+      <a name="appearance" val="logisim_evolution"/>
+      <a name="width" val="1"/>
+    </comp>
+    <comp lib="4" loc="(530,300)" name="Register">
+      <a name="appearance" val="logisim_evolution"/>
+      <a name="width" val="1"/>
+    </comp>
+    <comp lib="4" loc="(530,420)" name="Register">
+      <a name="appearance" val="logisim_evolution"/>
+      <a name="width" val="1"/>
+    </comp>
+    <comp lib="4" loc="(530,60)" name="Register">
+      <a name="appearance" val="logisim_evolution"/>
+      <a name="width" val="1"/>
+    </comp>
+    <wire from="(200,100)" to="(220,100)"/>
+    <wire from="(200,200)" to="(220,200)"/>
+    <wire from="(200,270)" to="(320,270)"/>
+    <wire from="(200,320)" to="(320,320)"/>
+    <wire from="(240,160)" to="(290,160)"/>
+    <wire from="(240,170)" to="(280,170)"/>
+    <wire from="(240,180)" to="(270,180)"/>
+    <wire from="(240,190)" to="(260,190)"/>
+    <wire from="(240,60)" to="(290,60)"/>
+    <wire from="(240,70)" to="(280,70)"/>
+    <wire from="(240,80)" to="(270,80)"/>
+    <wire from="(240,90)" to="(260,90)"/>
+    <wire from="(260,120)" to="(290,120)"/>
+    <wire from="(260,190)" to="(260,220)"/>
+    <wire from="(260,220)" to="(290,220)"/>
+    <wire from="(260,90)" to="(260,120)"/>
+    <wire from="(270,100)" to="(290,100)"/>
+    <wire from="(270,180)" to="(270,200)"/>
+    <wire from="(270,200)" to="(290,200)"/>
+    <wire from="(270,80)" to="(270,100)"/>
+    <wire from="(280,170)" to="(280,180)"/>
+    <wire from="(280,180)" to="(290,180)"/>
+    <wire from="(280,70)" to="(280,80)"/>
+    <wire from="(280,80)" to="(290,80)"/>
+    <wire from="(780,110)" to="(790,110)"/>
+    <wire from="(780,130)" to="(800,130)"/>
+    <wire from="(780,150)" to="(810,150)"/>
+    <wire from="(780,90)" to="(820,90)"/>
+    <wire from="(790,100)" to="(790,110)"/>
+    <wire from="(790,100)" to="(820,100)"/>
+    <wire from="(800,110)" to="(800,130)"/>
+    <wire from="(800,110)" to="(820,110)"/>
+    <wire from="(810,120)" to="(810,150)"/>
+    <wire from="(810,120)" to="(820,120)"/>
+    <wire from="(840,70)" to="(840,80)"/>
+    <wire from="(840,70)" to="(850,70)"/>
   </circuit>
 </project>
