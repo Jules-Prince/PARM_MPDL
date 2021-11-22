@@ -1,0 +1,6 @@
+Opcode[6] Shift[1] Data_Processing[1] Load_Store[1] SP_Address[1] Conditional[1]
+000000 1 0 0 0 0
+010000 0 1 0 0 0
+100100 0 0 1 0 0 
+101100 0 0 0 1 0
+110100 0 0 0 0 1
