@@ -4,7 +4,6 @@
 
   <lib desc="#Wiring" name="0">
     <tool name="Splitter">
-      <a name="appear" val="right"/>
       <a name="facing" val="west"/>
       <a name="fanout" val="4"/>
       <a name="incoming" val="1"/>
@@ -15,6 +14,9 @@
     <tool name="Probe">
       <a name="facing" val="north"/>
       <a name="radix" val="10unsigned"/>
+    </tool>
+    <tool name="Tunnel">
+      <a name="facing" val="south"/>
     </tool>
     <tool name="Pull Resistor">
       <a name="facing" val="north"/>
@@ -1652,23 +1654,23 @@ end TCL_Generic;
     </comp>
     <comp lib="5" loc="(1100,1110)" name="TTY"/>
     <comp lib="5" loc="(130,1030)" name="DipSwitch">
-      <a name="Dummy" val="com.cburch.logisim.fpga.data.ComponentMapInformationContainer@5418faa6"/>
+      <a name="Dummy" val="com.cburch.logisim.fpga.data.ComponentMapInformationContainer@295d480b"/>
       <a name="labelloc" val="south"/>
     </comp>
     <comp lib="5" loc="(140,1150)" name="Keyboard"/>
     <comp lib="5" loc="(20,1030)" name="DipSwitch">
-      <a name="Dummy" val="com.cburch.logisim.fpga.data.ComponentMapInformationContainer@13729af5"/>
+      <a name="Dummy" val="com.cburch.logisim.fpga.data.ComponentMapInformationContainer@1445bdda"/>
       <a name="labelloc" val="south"/>
     </comp>
     <comp lib="5" loc="(240,1030)" name="DipSwitch">
-      <a name="Dummy" val="com.cburch.logisim.fpga.data.ComponentMapInformationContainer@9b93b5c"/>
+      <a name="Dummy" val="com.cburch.logisim.fpga.data.ComponentMapInformationContainer@70fef7f7"/>
       <a name="labelloc" val="south"/>
     </comp>
     <comp lib="5" loc="(360,1120)" name="Joystick">
       <a name="bits" val="5"/>
     </comp>
     <comp lib="5" loc="(450,1010)" name="DotMatrix">
-      <a name="Dummy" val="com.cburch.logisim.fpga.data.ComponentMapInformationContainer@1877460a"/>
+      <a name="Dummy" val="com.cburch.logisim.fpga.data.ComponentMapInformationContainer@349bee3f"/>
       <a name="inputtype" val="row"/>
       <a name="matrixcols" val="8"/>
       <a name="matrixrows" val="4"/>
@@ -1683,39 +1685,39 @@ end TCL_Generic;
       <a name="labelloc" val="east"/>
     </comp>
     <comp lib="5" loc="(630,1110)" name="Hex Digit Display">
-      <a name="Dummy" val="com.cburch.logisim.fpga.data.ComponentMapInformationContainer@ba94268"/>
+      <a name="Dummy" val="com.cburch.logisim.fpga.data.ComponentMapInformationContainer@7745e5b7"/>
     </comp>
     <comp lib="5" loc="(670,1020)" name="DotMatrix">
-      <a name="Dummy" val="com.cburch.logisim.fpga.data.ComponentMapInformationContainer@c8bd4da"/>
+      <a name="Dummy" val="com.cburch.logisim.fpga.data.ComponentMapInformationContainer@4ed73de8"/>
       <a name="inputtype" val="row"/>
       <a name="matrixcols" val="32"/>
       <a name="matrixrows" val="1"/>
     </comp>
     <comp lib="5" loc="(670,1110)" name="Hex Digit Display">
-      <a name="Dummy" val="com.cburch.logisim.fpga.data.ComponentMapInformationContainer@4ca87dcc"/>
+      <a name="Dummy" val="com.cburch.logisim.fpga.data.ComponentMapInformationContainer@49112a8a"/>
     </comp>
     <comp lib="5" loc="(710,1110)" name="Hex Digit Display">
-      <a name="Dummy" val="com.cburch.logisim.fpga.data.ComponentMapInformationContainer@6e4d3545"/>
+      <a name="Dummy" val="com.cburch.logisim.fpga.data.ComponentMapInformationContainer@2210df81"/>
     </comp>
     <comp lib="5" loc="(750,1110)" name="Hex Digit Display">
-      <a name="Dummy" val="com.cburch.logisim.fpga.data.ComponentMapInformationContainer@2fb680e6"/>
+      <a name="Dummy" val="com.cburch.logisim.fpga.data.ComponentMapInformationContainer@7aa0fe29"/>
     </comp>
     <comp lib="5" loc="(770,910)" name="Button">
       <a name="facing" val="west"/>
       <a name="labelloc" val="east"/>
     </comp>
     <comp lib="5" loc="(870,1110)" name="Hex Digit Display">
-      <a name="Dummy" val="com.cburch.logisim.fpga.data.ComponentMapInformationContainer@7d49acce"/>
+      <a name="Dummy" val="com.cburch.logisim.fpga.data.ComponentMapInformationContainer@defb4e8"/>
     </comp>
     <comp lib="5" loc="(890,910)" name="Button"/>
     <comp lib="5" loc="(910,1110)" name="Hex Digit Display">
-      <a name="Dummy" val="com.cburch.logisim.fpga.data.ComponentMapInformationContainer@7280e8b6"/>
+      <a name="Dummy" val="com.cburch.logisim.fpga.data.ComponentMapInformationContainer@4d6a8aa5"/>
     </comp>
     <comp lib="5" loc="(950,1110)" name="Hex Digit Display">
-      <a name="Dummy" val="com.cburch.logisim.fpga.data.ComponentMapInformationContainer@75601cbe"/>
+      <a name="Dummy" val="com.cburch.logisim.fpga.data.ComponentMapInformationContainer@69a2a85e"/>
     </comp>
     <comp lib="5" loc="(990,1110)" name="Hex Digit Display">
-      <a name="Dummy" val="com.cburch.logisim.fpga.data.ComponentMapInformationContainer@6e4a1344"/>
+      <a name="Dummy" val="com.cburch.logisim.fpga.data.ComponentMapInformationContainer@148e52f5"/>
     </comp>
     <comp lib="8" loc="(1231,132)" name="Text">
       <a name="font" val="SansSerif plain 20"/>
@@ -2209,7 +2211,7 @@ end TCL_Generic;
     </comp>
     <comp lib="0" loc="(1080,510)" name="Tunnel">
       <a name="facing" val="north"/>
-      <a name="label" val="S"/>
+      <a name="label" val="ALU"/>
       <a name="width" val="32"/>
     </comp>
     <comp lib="0" loc="(1080,70)" name="Pin">
@@ -2269,12 +2271,12 @@ end TCL_Generic;
     </comp>
     <comp lib="0" loc="(1360,160)" name="Tunnel">
       <a name="facing" val="east"/>
-      <a name="label" val="PO"/>
+      <a name="label" val="PC"/>
       <a name="width" val="16"/>
     </comp>
     <comp lib="0" loc="(1360,240)" name="Tunnel">
       <a name="facing" val="east"/>
-      <a name="label" val="RAM"/>
+      <a name="label" val="RAM_addr"/>
       <a name="width" val="32"/>
     </comp>
     <comp lib="0" loc="(1360,310)" name="Tunnel">
@@ -2298,12 +2300,12 @@ end TCL_Generic;
     </comp>
     <comp lib="0" loc="(1370,620)" name="Tunnel">
       <a name="facing" val="east"/>
-      <a name="label" val="S"/>
+      <a name="label" val="ALU"/>
       <a name="width" val="32"/>
     </comp>
     <comp lib="0" loc="(1370,660)" name="Tunnel">
       <a name="facing" val="east"/>
-      <a name="label" val="A"/>
+      <a name="label" val="A_out"/>
       <a name="width" val="32"/>
     </comp>
     <comp lib="0" loc="(1390,160)" name="Pin">
@@ -2390,7 +2392,7 @@ end TCL_Generic;
     </comp>
     <comp lib="0" loc="(530,90)" name="Tunnel">
       <a name="facing" val="east"/>
-      <a name="label" val="S"/>
+      <a name="label" val="ALU"/>
       <a name="width" val="32"/>
     </comp>
     <comp lib="0" loc="(580,140)" name="Tunnel">
@@ -2402,11 +2404,11 @@ end TCL_Generic;
       <a name="width" val="32"/>
     </comp>
     <comp lib="0" loc="(700,300)" name="Tunnel">
-      <a name="label" val="PO"/>
+      <a name="label" val="PC"/>
       <a name="width" val="16"/>
     </comp>
     <comp lib="0" loc="(700,330)" name="Tunnel">
-      <a name="label" val="RAM"/>
+      <a name="label" val="RAM_addr"/>
       <a name="width" val="32"/>
     </comp>
     <comp lib="0" loc="(700,360)" name="Tunnel">

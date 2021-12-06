@@ -1,11 +1,11 @@
 package Instructions;
 
-public class Movs extends Instruction{
+public class Sub extends Instruction {
     String opCode;
     String registre;
     String imm;
 
-    public Movs(String line) {
+    public Sub(String line) {
         String[] args = line.split(" ");
         opCode = args[0];
         registre = args[1];
