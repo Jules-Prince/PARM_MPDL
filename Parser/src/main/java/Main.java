@@ -4,6 +4,7 @@ public class Main {
         String input = args[0];
         String output = args[1];
 
-
+        Parser parser = new Parser(input, output);
+        parser.parseFile();
     }
 }
