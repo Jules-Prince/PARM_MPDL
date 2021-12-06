@@ -13,7 +13,7 @@ public class Add extends Instruction {
     }
 
     @Override
-    public void convert(){
+    public String convert(){
         String bin = "00100";
 
         int nbRegistre = Integer.parseInt(registre.substring(0));
@@ -23,5 +23,7 @@ public class Add extends Instruction {
         int nbImm = Integer.parseInt(imm.substring(0));
         String nbImmBin = Integer.toBinaryString(nbImm);
         bin += nbImmBin;
+
+        return bin;
     }
 }

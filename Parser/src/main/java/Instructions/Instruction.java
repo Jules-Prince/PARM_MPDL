@@ -2,5 +2,5 @@ package Instructions;
 
 public abstract class Instruction {
 
-    public abstract void convert();
+    public abstract String convert();
 }

@@ -1,11 +1,11 @@
 package Instructions;
 
-public class Movs extends Instruction{
+public class Cmp extends Instruction {
     String opCode;
     String registre;
     String imm;
 
-    public Movs(String line) {
+    public Cmp(String line) {
         String[] args = line.split(" ");
         opCode = args[0];
         registre = args[1];
@@ -15,7 +15,7 @@ public class Movs extends Instruction{
     @Override
     public String convert(){
         StringBuilder bin = new StringBuilder();
-        bin.append("00100");
+        bin.append("00101");
 
         int nbRegistre = Integer.parseInt(String.valueOf(registre.charAt(1)));
         String nbRegistreBin = Integer.toBinaryString(nbRegistre);
