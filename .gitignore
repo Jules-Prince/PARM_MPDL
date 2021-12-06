@@ -33,3 +33,5 @@ Parser/**/*.exe
 Parser/**/.classpath
 Parser/**/.project
 Parser/**/.settings
+
+.DS_Store
