@@ -1,1 +1,35 @@
 
+# Compiled class file
+Parser/*.class
+
+# Log file
+Parser/*.log
+
+# BlueJ files
+Parser/*.ctxt
+
+# Mobile Tools for Java (J2ME)
+Parser/.mtj.tmp/
+
+# Package Files #
+Parser/*.jar
+Parser/*.war
+Parser/*.nar
+Parser/*.ear
+Parser/*.zip
+Parser/*.tar.gz
+Parser/*.rar
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+Parser/hs_err_pid*
+
+# Eclipse and IntelliJ exclusions
+Parser/**/target
+Parser/**/*.iml
+Parser/.idea
+Parser/**/.idea
+Parser/**/*.exe
+
+Parser/**/.classpath
+Parser/**/.project
+Parser/**/.settings
