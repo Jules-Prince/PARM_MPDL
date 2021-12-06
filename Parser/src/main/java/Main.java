@@ -1,9 +1,9 @@
 
 public class Main {
     public static void main(String[] args) {
-        //String input = args[1];
-        //String output = args[2];
+        String input = args[0];
+        String output = args[1];
 
-        System.out.println("Test");
+
     }
 }
