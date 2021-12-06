@@ -8,6 +8,4 @@ public class Movs extends Instruction{
         //Premier partie -> opCode
         //2ieme -> registre à deplacer
     }
-
-    public void convert()
 }
