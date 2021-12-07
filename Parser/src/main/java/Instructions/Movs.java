@@ -19,17 +19,19 @@ public class Movs extends Instruction{
 
         int nbRegistre = Integer.parseInt(String.valueOf(registre.charAt(1)));
         String nbRegistreBin = Integer.toBinaryString(nbRegistre);
-        bin.append(nbRegistreBin);
-        if(nbRegistreBin.equals("0")){
-            bin.append("00");
+        if(nbRegistreBin.length()<3){
+            for(int i=0; i<3-nbRegistreBin.length(); i++)
+                bin.append("0");
         }
+        bin.append(nbRegistreBin);
 
         int nbImm = Integer.parseInt(imm.substring(1));
         String nbImmBin = Integer.toBinaryString(nbImm);
-        bin.append(nbImmBin);
-        if(nbImmBin.equals("0")){
-            bin.append("0000000");
+        if(nbImmBin.length()<8){
+            for(int i=0; i<8-nbRegistreBin.length(); i++)
+                bin.append("0");
         }
+        bin.append(nbImmBin);
 
         return bin.toString();
     }

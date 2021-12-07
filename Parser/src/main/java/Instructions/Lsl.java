@@ -1,23 +1,31 @@
 package Instructions;
 
-public class Add extends Instruction {
+public class Lsl extends Instruction{
     String opCode;
+    String imm;
     String rm;
-    String rn;
     String rd;
 
-    public Add(String line) {
+    public Lsl(String line) {
         String[] args = line.split(" ");
         opCode = args[0];
-        rm = args[1];
-        rn = args[2];
+        imm = args[1];
+        rm = args[2];
         rd = args[3];
     }
 
     @Override
     public String convert(){
         StringBuilder bin = new StringBuilder();
-        bin.append("0001100");
+        bin.append("00000");
+
+        int nbImm = Integer.parseInt(String.valueOf(imm.charAt(1)));
+        String nbImmBin = Integer.toBinaryString(nbImm);
+        if(nbImmBin.length()<5){
+            for(int i=0; i<5-nbImmBin.length(); i++)
+                bin.append("0");
+        }
+        bin.append(nbImmBin);
 
         int nbRm = Integer.parseInt(String.valueOf(rm.charAt(1)));
         String nbRmBin = Integer.toBinaryString(nbRm);
@@ -26,14 +34,6 @@ public class Add extends Instruction {
                 bin.append("0");
         }
         bin.append(nbRmBin);
-
-        int nbRn = Integer.parseInt(String.valueOf(rn.charAt(1)));
-        String nbRnBin = Integer.toBinaryString(nbRn);
-        if(nbRnBin.length()<3){
-            for(int i=0; i<3-nbRnBin.length(); i++)
-                bin.append("0");
-        }
-        bin.append(nbRnBin);
 
         int nbRd = Integer.parseInt(String.valueOf(rd.charAt(1)));
         String nbRdBin = Integer.toBinaryString(nbRd);

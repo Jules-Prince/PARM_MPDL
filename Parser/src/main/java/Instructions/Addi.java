@@ -1,15 +1,15 @@
 package Instructions;
 
-public class Add extends Instruction {
+public class Addi extends Instruction{
     String opCode;
-    String rm;
+    String imm;
     String rn;
     String rd;
 
-    public Add(String line) {
+    public Addi(String line) {
         String[] args = line.split(" ");
         opCode = args[0];
-        rm = args[1];
+        imm = args[1];
         rn = args[2];
         rd = args[3];
     }
@@ -17,15 +17,15 @@ public class Add extends Instruction {
     @Override
     public String convert(){
         StringBuilder bin = new StringBuilder();
-        bin.append("0001100");
+        bin.append("0001110");
 
-        int nbRm = Integer.parseInt(String.valueOf(rm.charAt(1)));
-        String nbRmBin = Integer.toBinaryString(nbRm);
-        if(nbRmBin.length()<3){
-            for(int i=0; i<3-nbRmBin.length(); i++)
+        int nbImm = Integer.parseInt(String.valueOf(imm.charAt(1)));
+        String nbImmBin = Integer.toBinaryString(nbImm);
+        if(nbImmBin.length()<3){
+            for(int i=0; i<3-nbImmBin.length(); i++)
                 bin.append("0");
         }
-        bin.append(nbRmBin);
+        bin.append(nbImmBin);
 
         int nbRn = Integer.parseInt(String.valueOf(rn.charAt(1)));
         String nbRnBin = Integer.toBinaryString(nbRn);

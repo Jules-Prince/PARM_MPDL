@@ -6,10 +6,6 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class MovsTest {
-    String opCode;
-    String registre;
-    String imm;
-
     String line;
 
     @Test
@@ -22,5 +18,23 @@ class MovsTest {
         Assertions.assertEquals("0010000000000000", res);
     }
 
+    @Test
+    void convertLine1(){
+        line = "movs r1, #170";
+        Movs movs = new Movs(line);
 
+        String res = movs.convert();
+
+        Assertions.assertEquals("0010000110101010", res);
+    }
+
+    @Test
+    void convertLine2(){
+        line = "movs r2, #255";
+        Movs movs = new Movs(line);
+
+        String res = movs.convert();
+
+        Assertions.assertEquals("0010001011111111", res);
+    }
 }
