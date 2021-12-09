@@ -1,13 +1,13 @@
 package Instructions;
 
-//subs
-public class Subi extends Instruction{
+//rsbs rd rn #0
+public class Rsb extends Instruction {
     String opCode;
-    String imm;
-    String rn;
     String rd;
+    String rn;
+    String imm;
 
-    public Subi(String line) {
+    public Rsb(String line){
         String[] args = line.split(" ");
         opCode = args[0];
         rd = args[1];
@@ -16,17 +16,9 @@ public class Subi extends Instruction{
     }
 
     @Override
-    public String convert(){
+    public String convert() {
         StringBuilder bin = new StringBuilder();
-        bin.append("0001111");
-
-        int nbImm = Integer.parseInt(String.valueOf(imm.charAt(1)));
-        String nbImmBin = Integer.toBinaryString(nbImm);
-        if(nbImmBin.length()<3){
-            for(int i=0; i<3-nbImmBin.length(); i++)
-                bin.append("0");
-        }
-        bin.append(nbImmBin);
+        bin.append("0100001001");
 
         int nbRn = Integer.parseInt(String.valueOf(rn.charAt(1)));
         String nbRnBin = Integer.toBinaryString(nbRn);

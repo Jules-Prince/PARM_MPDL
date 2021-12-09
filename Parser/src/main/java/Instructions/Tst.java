@@ -1,24 +1,22 @@
 package Instructions;
 
-//subs
-public class Sub extends Instruction {
+//tst rn rm
+public class Tst extends Instruction {
     String opCode;
-    String rm;
     String rn;
-    String rd;
+    String rm;
 
-    public Sub(String line) {
+    public Tst(String line){
         String[] args = line.split(" ");
         opCode = args[0];
-        rd = args[1];
-        rn = args[2];
-        rm = args[3];
+        rn = args[1];
+        rm = args[2];
     }
 
     @Override
-    public String convert(){
+    public String convert() {
         StringBuilder bin = new StringBuilder();
-        bin.append("0001101");
+        bin.append("0100001000");
 
         int nbRm = Integer.parseInt(String.valueOf(rm.charAt(1)));
         String nbRmBin = Integer.toBinaryString(nbRm);
@@ -35,14 +33,6 @@ public class Sub extends Instruction {
                 bin.append("0");
         }
         bin.append(nbRnBin);
-
-        int nbRd = Integer.parseInt(String.valueOf(rd.charAt(1)));
-        String nbRdBin = Integer.toBinaryString(nbRd);
-        if(nbRdBin.length()<3){
-            for(int i=0; i<3-nbRdBin.length(); i++)
-                bin.append("0");
-        }
-        bin.append(nbRdBin);
 
         return bin.toString();
     }

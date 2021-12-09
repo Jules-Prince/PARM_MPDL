@@ -1,5 +1,6 @@
 package Instructions;
 
+//cmp
 public class Cmp extends Instruction {
     String opCode;
     String registre;

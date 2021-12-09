@@ -1,5 +1,6 @@
 package Instructions;
 
+//lsrs
 public class Lsr extends Instruction{
     String opCode;
     String imm;
@@ -9,9 +10,9 @@ public class Lsr extends Instruction{
     public Lsr(String line) {
         String[] args = line.split(" ");
         opCode = args[0];
-        imm = args[1];
+        rd = args[1];
         rm = args[2];
-        rd = args[3];
+        imm = args[3];
     }
 
     @Override

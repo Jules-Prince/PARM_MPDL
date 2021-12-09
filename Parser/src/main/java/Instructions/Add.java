@@ -1,5 +1,6 @@
 package Instructions;
 
+//adds
 public class Add extends Instruction {
     String opCode;
     String rm;
@@ -9,9 +10,9 @@ public class Add extends Instruction {
     public Add(String line) {
         String[] args = line.split(" ");
         opCode = args[0];
-        rm = args[1];
+        rd = args[1];
         rn = args[2];
-        rd = args[3];
+        rm = args[3];
     }
 
     @Override

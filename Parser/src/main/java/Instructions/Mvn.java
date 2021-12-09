@@ -1,32 +1,22 @@
 package Instructions;
 
-//asrs
-public class Asr extends Instruction{
+//MVNS <Rd > , <Rm>
+public class Mvn extends Instruction {
     String opCode;
-    String imm;
-    String rm;
     String rd;
+    String rm;
 
-    public Asr(String line) {
+    public Mvn(String line){
         String[] args = line.split(" ");
         opCode = args[0];
         rd = args[1];
         rm = args[2];
-        imm = args[3];
     }
 
     @Override
-    public String convert(){
+    public String convert() {
         StringBuilder bin = new StringBuilder();
-        bin.append("00010");
-
-        int nbImm = Integer.parseInt(String.valueOf(imm.charAt(1)));
-        String nbImmBin = Integer.toBinaryString(nbImm);
-        if(nbImmBin.length()<5){
-            for(int i=0; i<5-nbImmBin.length(); i++)
-                bin.append("0");
-        }
-        bin.append(nbImmBin);
+        bin.append("0100001111");
 
         int nbRm = Integer.parseInt(String.valueOf(rm.charAt(1)));
         String nbRmBin = Integer.toBinaryString(nbRm);
