@@ -4,7 +4,7 @@ public abstract class Instruction {
 
     public abstract String convert();
 
-    String convertBinToHexa(String bin){
+    public String convertBinToHexa(String bin){
         String hexa;
         double dec=0;
         String[] ind = bin.split("");

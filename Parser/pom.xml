@@ -60,7 +60,7 @@
                     <mainClass>Main</mainClass>
                     <arguments>
                         <argument>FirstInstruction.s</argument>
-                        <argument>coucou</argument>
+                        <argument>Output.bin</argument>
                     </arguments><!-- CHANGE ME -->
                 </configuration>
             </plugin>

@@ -25,13 +25,21 @@ public class AssemblyFile {
 
     public void init() {
         Scanner sc = null;
+        List<String> tmpLines = new ArrayList<>();
         try {
             sc = new Scanner(file);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-        while (sc.hasNextLine()){
-            this.getLines().add(sc.nextLine());
+        while (sc.hasNextLine()) {
+            tmpLines.add(sc.nextLine());
+        }
+
+        for(String tmpLine : tmpLines) {
+            if(tmpLine.equals("") || tmpLine.contains("@")){
+                continue;
+            }
+            this.getLines().add(tmpLine);
         }
     }
 
