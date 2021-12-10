@@ -1,8 +1,6 @@
+import Exceptions.ErrorOnInstruction;
 import Exceptions.UnkwnonInstructionException;
 import Instructions.*;
-
-import java.io.File;
-import java.util.List;
 
 public class Parser {
     private String inputFilePath;
@@ -34,48 +32,64 @@ public class Parser {
         return output;
     }
 
-    public void parseFile(){
-        for(String line : this.getFileToParse().getLines()){
-            Instruction instructions = detectInstruction(line);
-            if(instructions==null){
-                new UnkwnonInstructionException(line.split(" ")[0] + " n'est pas une instruction reconnue").toString();
+    public void parseFile() {
+
+        for (String line : this.getFileToParse().getLines()) {
+            String hexInstruction;
+            try {
+                hexInstruction = this.readInstructionAndConvertToHex(line);
+            } catch (UnkwnonInstructionException | ErrorOnInstruction e) {
+                e.printStackTrace();
                 continue;
             }
-            String binInstruction = instructions.convert();
-            this.getOutput().addInstruction(instructions.convertBinToHexa(binInstruction));
+            this.getOutput().addInstruction(hexInstruction);
         }
+
         System.out.println(this.getOutput().getOutput().toString());
         this.getOutput().write();
     }
 
+    private String readInstructionAndConvertToHex(String line) throws UnkwnonInstructionException, ErrorOnInstruction {
+        Instruction instructions = detectInstruction(line);
+        if (instructions == null) {
+            throw new UnkwnonInstructionException(line.split(" ")[0] + " est une instruction inconnue");
+        }
+        String binInstruction = instructions.convert();
+        return instructions.convertBinToHexa(binInstruction);
+    }
 
-    public Instruction detectInstruction(String line){
+
+    public Instruction detectInstruction(String line) throws ErrorOnInstruction {
         String[] args = line.split(" ");
         String opCode = args[0];
-        return switch (opCode) {
-            case "adc"  -> new Adc(line);
-            case "adds"  -> new Add(line);
-            case "addi" -> new Addi(line);
-            case "and"  -> new And(line);
-            case "asrs"  -> new Asr(line);
-            case "bic"  -> new Bic(line);
-            case "cmn"  -> new Cmn(line);
-            case "cmp"  -> new Cmp(line);
-            case "eor"  -> new Eor(line);
-            case "lsls"  -> new Lsl(line);
-            case "lsr"  -> new Lsr(line);
-            case "movs" -> new Movs(line);
-            case "mul"  -> new Mul(line);
-            case "mvn"  -> new Mvn(line);
-            case "orr"  -> new Orr(line);
-            case "ror"  -> new Ror(line);
-            case "rsb"  -> new Rsb(line);
-            case "sbc"  -> new Sbc(line);
-            case "subs"  -> new Sub(line);
-            case "subi" -> new Subi(line);
-            case "tst"  -> new Tst(line);
-            default -> null;
-        };
+        try {
+            return switch (opCode) {
+                case "adc" -> new Adc(line);
+                case "adds" -> new Add(line);
+                case "addi" -> new Addi(line);
+                case "ands" -> new And(line);
+                case "asrs" -> new Asr(line);
+                case "bic" -> new Bic(line);
+                case "cmn" -> new Cmn(line);
+                case "cmp" -> new Cmp(line);
+                case "eors" -> new Eor(line);
+                case "lsls" -> new Lsl(line);
+                case "lsrs" -> new Lsr(line);
+                case "movs" -> new Movs(line);
+                case "mul" -> new Mul(line);
+                case "mvn" -> new Mvn(line);
+                case "orr" -> new Orr(line);
+                case "ror" -> new Ror(line);
+                case "rsb" -> new Rsb(line);
+                case "sbc" -> new Sbc(line);
+                case "subs" -> new Sub(line);
+                case "subi" -> new Subi(line);
+                case "tst" -> new Tst(line);
+                default -> null;
+            };
+        } catch (Exception e) {
+            throw new ErrorOnInstruction(opCode + " a donné l'erreur : " + e.getMessage());
+        }
     }
 
 }

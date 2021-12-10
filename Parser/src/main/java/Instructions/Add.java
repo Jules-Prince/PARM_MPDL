@@ -23,24 +23,21 @@ public class Add extends Instruction {
         int nbRm = Integer.parseInt(String.valueOf(rm.charAt(1)));
         String nbRmBin = Integer.toBinaryString(nbRm);
         if(nbRmBin.length()<3){
-            for(int i=0; i<3-nbRmBin.length(); i++)
-                bin.append("0");
+            bin.append("0".repeat(3 - nbRmBin.length()));
         }
         bin.append(nbRmBin);
 
         int nbRn = Integer.parseInt(String.valueOf(rn.charAt(1)));
         String nbRnBin = Integer.toBinaryString(nbRn);
         if(nbRnBin.length()<3){
-            for(int i=0; i<3-nbRnBin.length(); i++)
-                bin.append("0");
+            bin.append("0".repeat(3 - nbRnBin.length()));
         }
         bin.append(nbRnBin);
 
         int nbRd = Integer.parseInt(String.valueOf(rd.charAt(1)));
         String nbRdBin = Integer.toBinaryString(nbRd);
         if(nbRdBin.length()<3){
-            for(int i=0; i<3-nbRdBin.length(); i++)
-                bin.append("0");
+            bin.append("0".repeat(3 - nbRdBin.length()));
         }
         bin.append(nbRdBin);
 
