@@ -25,6 +25,7 @@ public class B {
 
         if(b.length() > 1){
             StringBuilder condBin = new StringBuilder();
+            bin.append("1101");
             switch(cond){
                 case "EQ":
                     condBin.append("0000");
@@ -80,7 +81,6 @@ public class B {
 
             }
 
-            bin.append("1101");
             bin.append(condBin.toString());
         }
 
