@@ -1,12 +1,12 @@
 package Instructions;
 
-public class b {
+public class B {
     String line;
     String cond;
     String imm;
     String b;
 
-    b(String line){
+    B(String line){
         this.line = line;
         String[] args = line.split(" ");
         b =args[0];
