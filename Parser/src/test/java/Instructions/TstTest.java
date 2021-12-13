@@ -15,7 +15,7 @@ class TstTest {
 
         String res = tst.convert();
 
-        Assertions.assertEquals("0100001000000000", res); //a changer
+        Assertions.assertEquals("0100001000000000", res);
     }
 
     @Test
@@ -25,6 +25,6 @@ class TstTest {
 
         String res = tst.convert();
 
-        Assertions.assertEquals("0100001000110010", res); //a changer
+        Assertions.assertEquals("0100001000110010", res);
     }
 }

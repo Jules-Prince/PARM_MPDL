@@ -1,6 +1,5 @@
 package Instructions;
 
-//rsbs rd rn #0
 public class Rsb extends Instruction {
     String opCode;
     String rd;

@@ -1,11 +1,9 @@
 package Instructions;
 
-//MULS <Rdm> , <Rn > , <Rdm>
 public class Mul extends Instruction {
     String opCode;
     String rdm;
     String rn;
-    //String rdm;
 
     public Mul(String line){
         String[] args = line.split(" ");

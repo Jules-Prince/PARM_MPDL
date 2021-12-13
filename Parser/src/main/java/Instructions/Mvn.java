@@ -1,6 +1,5 @@
 package Instructions;
 
-//MVNS <Rd > , <Rm>
 public class Mvn extends Instruction {
     String opCode;
     String rd;

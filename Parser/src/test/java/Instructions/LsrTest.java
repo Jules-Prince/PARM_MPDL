@@ -15,7 +15,7 @@ class LsrTest {
 
         String res = lsr.convert();
 
-        Assertions.assertEquals("0000100000000000", res); //a changer
+        Assertions.assertEquals("0000100000000000", res);
     }
 
     @Test
@@ -25,6 +25,6 @@ class LsrTest {
 
         String res = lsr.convert();
 
-        Assertions.assertEquals("0000100001010100", res); //a changer
+        Assertions.assertEquals("0000100001010100", res);
     }
 }

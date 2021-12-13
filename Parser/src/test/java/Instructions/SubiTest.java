@@ -15,7 +15,7 @@ class SubiTest {
 
         String res = subi.convert();
 
-        Assertions.assertEquals("0001111000000000", res); //a changer
+        Assertions.assertEquals("0001111000000000", res);
     }
 
     @Test
@@ -25,6 +25,6 @@ class SubiTest {
 
         String res = subi.convert();
 
-        Assertions.assertEquals("0001111101000110", res); //a changer
+        Assertions.assertEquals("0001111101000110", res);
     }
 }

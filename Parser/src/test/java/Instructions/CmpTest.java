@@ -15,7 +15,7 @@ class CmpTest {
 
         String res = cmp.convert();
 
-        Assertions.assertEquals("0010100000000000", res); //a changer
+        Assertions.assertEquals("0010100000000000", res);
     }
 
     @Test
@@ -25,6 +25,6 @@ class CmpTest {
 
         String res = cmp.convert();
 
-        Assertions.assertEquals("0010100110101010", res); //a changer
+        Assertions.assertEquals("0010100110101010", res);
     }
 }

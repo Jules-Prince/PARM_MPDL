@@ -15,7 +15,7 @@ class CmnTest {
 
         String res = cmn.convert();
 
-        Assertions.assertEquals("0100001011000000", res); //a changer
+        Assertions.assertEquals("0100001011000000", res);
     }
 
     @Test
@@ -25,6 +25,6 @@ class CmnTest {
 
         String res = cmn.convert();
 
-        Assertions.assertEquals("0100001011001011", res); //a changer
+        Assertions.assertEquals("0100001011001011", res);
     }
 }

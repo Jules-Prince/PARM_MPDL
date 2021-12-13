@@ -1,6 +1,5 @@
 package Instructions;
 
-//lsls
 public class Lsl extends Instruction{
     String opCode;
     String imm;

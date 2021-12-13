@@ -1,6 +1,5 @@
 package Instructions;
 
-//ands rdn rm
 public class And extends Instruction {
     String opCode;
     String rdn;

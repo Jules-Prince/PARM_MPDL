@@ -15,7 +15,7 @@ class MulTest {
 
         String res = mul.convert();
 
-        Assertions.assertEquals("0100001101000000", res); //a changer
+        Assertions.assertEquals("0100001101000000", res);
     }
 
     @Test
@@ -25,6 +25,6 @@ class MulTest {
 
         String res = mul.convert();
 
-        Assertions.assertEquals("0100001101010101", res); //a changer
+        Assertions.assertEquals("0100001101010101", res);
     }
 }

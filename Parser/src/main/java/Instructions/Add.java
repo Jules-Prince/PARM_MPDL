@@ -1,6 +1,5 @@
 package Instructions;
 
-//adds
 public class Add extends Instruction {
     String opCode;
     String rm;

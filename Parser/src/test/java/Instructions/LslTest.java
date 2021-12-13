@@ -15,7 +15,7 @@ class LslTest {
 
         String res = lsl.convert();
 
-        Assertions.assertEquals("0000000000000000", res); //a changer
+        Assertions.assertEquals("0000000000000000", res);
     }
 
     @Test
@@ -25,6 +25,6 @@ class LslTest {
 
         String res = lsl.convert();
 
-        Assertions.assertEquals("0000000001010100", res); //a changer
+        Assertions.assertEquals("0000000001010100", res);
     }
 }

@@ -1,6 +1,5 @@
 package Instructions;
 
-//subs
 public class Sub extends Instruction {
     String opCode;
     String rm;

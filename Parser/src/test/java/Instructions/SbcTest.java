@@ -15,7 +15,7 @@ class SbcTest {
 
         String res = sbc.convert();
 
-        Assertions.assertEquals("0100000110000000", res); //a changer
+        Assertions.assertEquals("0100000110000000", res);
     }
 
     @Test
@@ -25,6 +25,6 @@ class SbcTest {
 
         String res = sbc.convert();
 
-        Assertions.assertEquals("0100000110001101", res); //a changer
+        Assertions.assertEquals("0100000110001101", res);
     }
 }

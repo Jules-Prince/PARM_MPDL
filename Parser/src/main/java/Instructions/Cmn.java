@@ -1,6 +1,5 @@
 package Instructions;
 
-//cmn rn rm
 public class Cmn extends Instruction{
     String opCode;
     String rn;

@@ -15,7 +15,7 @@ class AdcTest {
 
         String res = adc.convert();
 
-        Assertions.assertEquals("0100000101000000", res); //a changer
+        Assertions.assertEquals("0100000101000000", res);
     }
 
     @Test
@@ -25,6 +25,6 @@ class AdcTest {
 
         String res = adc.convert();
 
-        Assertions.assertEquals("0100000101001101", res); //a changer
+        Assertions.assertEquals("0100000101001101", res);
     }
 }

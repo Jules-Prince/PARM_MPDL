@@ -15,7 +15,7 @@ class MvnTest {
 
         String res = mvn.convert();
 
-        Assertions.assertEquals("0100001111000000", res); //a changer
+        Assertions.assertEquals("0100001111000000", res);
     }
 
     @Test
@@ -25,6 +25,6 @@ class MvnTest {
 
         String res = mvn.convert();
 
-        Assertions.assertEquals("0100001111010111", res); //a changer
+        Assertions.assertEquals("0100001111010111", res);
     }
 }

@@ -17,8 +17,8 @@ class InstructionTest {
             }
         };
         String hexa = instruction.convertBinToHexa(bin);
-
-        Assertions.assertEquals("df", hexa);
+        String res = ("00df");
+        Assertions.assertEquals(res, hexa);
     }
 
 }

@@ -15,7 +15,7 @@ class BicTest {
 
         String res = bic.convert();
 
-        Assertions.assertEquals("0100001110000000", res); //a changer
+        Assertions.assertEquals("0100001110000000", res);
     }
 
     @Test
@@ -25,6 +25,6 @@ class BicTest {
 
         String res = bic.convert();
 
-        Assertions.assertEquals("0100001110010110", res); //a changer
+        Assertions.assertEquals("0100001110010110", res);
     }
 }

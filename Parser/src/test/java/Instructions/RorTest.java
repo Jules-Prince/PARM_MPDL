@@ -15,7 +15,7 @@ class RorTest {
 
         String res = ror.convert();
 
-        Assertions.assertEquals("0100000111000000", res); //a changer
+        Assertions.assertEquals("0100000111000000", res);
     }
 
     @Test
@@ -25,6 +25,6 @@ class RorTest {
 
         String res = ror.convert();
 
-        Assertions.assertEquals("0100000111001110", res); //a changer
+        Assertions.assertEquals("0100000111001110", res);
     }
 }

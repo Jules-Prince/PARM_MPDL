@@ -15,7 +15,7 @@ class OrrTest {
 
         String res = orr.convert();
 
-        Assertions.assertEquals("0100001100000000", res); //a changer
+        Assertions.assertEquals("0100001100000000", res);
     }
 
     @Test
@@ -25,6 +25,6 @@ class OrrTest {
 
         String res = orr.convert();
 
-        Assertions.assertEquals("0100001100010100", res); //a changer
+        Assertions.assertEquals("0100001100010100", res);
     }
 }

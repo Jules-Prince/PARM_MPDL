@@ -15,7 +15,7 @@ class AddTest {
 
         String res = add.convert();
 
-        Assertions.assertEquals("0001100000000000", res); //a changer
+        Assertions.assertEquals("0001100000000000", res);
     }
 
     @Test
@@ -25,6 +25,6 @@ class AddTest {
 
         String res = add.convert();
 
-        Assertions.assertEquals("0001100001110111", res); //a changer
+        Assertions.assertEquals("0001100001110111", res);
     }
 }

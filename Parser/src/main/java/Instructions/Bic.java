@@ -1,6 +1,5 @@
 package Instructions;
 
-//BICS <Rdn > , <Rm>
 public class Bic extends Instruction {
     String opCode;
     String rdn;

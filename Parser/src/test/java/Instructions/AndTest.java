@@ -15,7 +15,7 @@ class AndTest {
 
         String res = and.convert();
 
-        Assertions.assertEquals("0100000000000000", res); //a changer
+        Assertions.assertEquals("0100000000000000", res);
     }
 
     @Test
@@ -25,6 +25,6 @@ class AndTest {
 
         String res = and.convert();
 
-        Assertions.assertEquals("0100000000001011", res); //a changer
+        Assertions.assertEquals("0100000000001011", res);
     }
 }

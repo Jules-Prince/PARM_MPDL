@@ -15,7 +15,7 @@ class RsbTest {
 
         String res = rsb.convert();
 
-        Assertions.assertEquals("0100001001000000", res); //a changer
+        Assertions.assertEquals("0100001001000000", res);
     }
 
     @Test
@@ -25,6 +25,6 @@ class RsbTest {
 
         String res = rsb.convert();
 
-        Assertions.assertEquals("0100001001100100", res); //a changer
+        Assertions.assertEquals("0100001001100100", res);
     }
 }

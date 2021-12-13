@@ -15,7 +15,7 @@ class AsrTest {
 
         String res = asr.convert();
 
-        Assertions.assertEquals("0001000000000000", res); //a changer
+        Assertions.assertEquals("0001000000000000", res);
     }
 
     @Test
@@ -25,6 +25,6 @@ class AsrTest {
 
         String res = asr.convert();
 
-        Assertions.assertEquals("0001000001110110", res); //a changer
+        Assertions.assertEquals("0001000001110110", res);
     }
 }

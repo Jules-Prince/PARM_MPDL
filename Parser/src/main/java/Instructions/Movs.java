@@ -1,6 +1,5 @@
 package Instructions;
 
-//movs
 public class Movs extends Instruction{
     String opCode;
     String registre;

@@ -1,6 +1,5 @@
 package Instructions;
 
-//tst rn rm
 public class Tst extends Instruction {
     String opCode;
     String rn;

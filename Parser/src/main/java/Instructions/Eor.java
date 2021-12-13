@@ -1,6 +1,5 @@
 package Instructions;
 
-//eors rdn rm
 public class Eor extends Instruction {
     String opCode;
     String rdn;

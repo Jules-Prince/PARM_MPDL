@@ -1,6 +1,5 @@
 package Instructions;
 
-//asrs
 public class Asr extends Instruction{
     String opCode;
     String imm;

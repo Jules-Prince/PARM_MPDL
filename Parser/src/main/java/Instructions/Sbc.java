@@ -1,6 +1,5 @@
 package Instructions;
 
-//sbcs rdn rm
 public class Sbc extends Instruction {
     String opCode;
     String rdn;

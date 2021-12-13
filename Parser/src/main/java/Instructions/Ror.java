@@ -1,6 +1,5 @@
 package Instructions;
 
-//rors rdn rm
 public class Ror extends Instruction {
     String opCode;
     String rdn;

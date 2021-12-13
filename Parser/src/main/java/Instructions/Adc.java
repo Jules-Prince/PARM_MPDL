@@ -1,6 +1,5 @@
 package Instructions;
 
-//adcs rdn rm
 public class Adc extends Instruction {
     String opCode;
     String rdn;
