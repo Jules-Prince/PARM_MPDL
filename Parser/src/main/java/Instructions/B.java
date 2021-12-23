@@ -44,12 +44,9 @@ public class B extends Instruction {
                 case "LE" -> condBin.append("1101");
                 case "AL" -> condBin.append("1110");
             }
-
-            bin.append("1101");
-            bin.append(condBin);
             bin.append(condBin);
         }
-        bin.append(imm); /**convertir l'argument en bits*/
+        bin.append(imm); //convertir l'argument en bits
 
         return bin.toString();
     }
