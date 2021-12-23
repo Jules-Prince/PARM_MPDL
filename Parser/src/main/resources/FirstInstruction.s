@@ -1,22 +1,19 @@
 movs r0, #0
-movs r1, #170
-movs r2, #255
-
-movs r3, #15
-ands r3, r1
-@r3 value should be 10, A
-
-movs r4, #161
-eors r4, r1
-@r4 value should be 11, B
-
-movs r5, #2
-movs r6, #15
-lsls r6, r5
-@r6 value should be 60, 3C
-
-movs r7, #1
-lsrs r6, r7
-@r6 value should be 30, 1E
-
-@Needs shift_add_sub_move to be implemented
+movs r1, #1
+.goto:
+	movs r2, #20
+	cmp r0, r1
+	bMI .then1
+	b .endif1
+.then1:
+	rsbs r2, r2, #0
+.endif1:
+	cmp r2, r1
+	bLT .then2
+	b .endif2
+.then2:
+	movs r0, #50
+	b .goto
+.endif2:
+	adds r3, r0, r2
+	@r3 value should be 70, 46

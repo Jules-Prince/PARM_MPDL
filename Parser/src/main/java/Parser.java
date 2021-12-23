@@ -2,17 +2,19 @@ import Exceptions.ErrorOnInstruction;
 import Exceptions.UnkwnonInstructionException;
 import Instructions.*;
 
+import java.util.Map;
+
 public class Parser {
     private String inputFilePath;
     private String outputFilePath;
 
-    private AssemblyFile fileToParse;
+    private static AssemblyFile fileToParse;
     private OutputFile output;
 
     public Parser(String inputFilePath, String outputFilePath) {
         this.inputFilePath = inputFilePath;
         this.outputFilePath = outputFilePath;
-        this.fileToParse = new AssemblyFile(inputFilePath);
+        fileToParse = new AssemblyFile(inputFilePath);
         this.output = new OutputFile(outputFilePath);
     }
 
@@ -34,10 +36,15 @@ public class Parser {
 
     public void parseFile() {
 
-        for (String line : this.getFileToParse().getLines()) {
+        for (Map.Entry entry : this.getFileToParse().getLines().entrySet()) {
+            String line = (String) entry.getKey();
             String hexInstruction;
             try {
-                hexInstruction = this.readInstructionAndConvertToHex(line);
+                if (line.charAt(0) != '.') {
+                    hexInstruction = this.readInstructionAndConvertToHex(line);
+                } else {
+                    continue;
+                }
             } catch (UnkwnonInstructionException | ErrorOnInstruction e) {
                 e.printStackTrace();
                 continue;
@@ -63,6 +70,9 @@ public class Parser {
         String[] args = line.split(" ");
         String opCode = args[0];
         try {
+            if (opCode.charAt(0) == 'b') {
+                return new B(line);
+            }
             return switch (opCode) {
                 case "adc" -> new Adc(line);
                 case "adds" -> new Add(line);
@@ -91,5 +101,12 @@ public class Parser {
             throw new ErrorOnInstruction(opCode + " a donné l'erreur : " + e.getMessage());
         }
     }
+
+    public static int calculAddressLabel(String currentLine, String label) {
+        Integer nbLineInstruction = fileToParse.getLines().get(currentLine);
+        Integer nbLineLabel = fileToParse.getLines().get(label);
+        return nbLineLabel - nbLineInstruction - 3;
+    }
+
 
 }

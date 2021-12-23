@@ -1,26 +1,25 @@
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class AssemblyFile {
 
     private File file;
-    private List<String> lines;
+    private static int nbLines = 1;
+    private Map<String, Integer> lines;
 
     public AssemblyFile(String inputFile) {
         this.file = new File(System.getProperty("user.dir") + "/src/main/resources/" + inputFile);
-        this.lines = new ArrayList<>();
+        this.lines = new HashMap<>();
         this.init();
     }
 
-    public File getFile() {
-        return file;
+    public Map<String, Integer> getLines() {
+        return lines;
     }
 
-    public List<String> getLines() {
-        return lines;
+    public void setLines(Map<String, Integer> lines) {
+        this.lines = lines;
     }
 
     public void init() {
@@ -31,16 +30,37 @@ public class AssemblyFile {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-        while (sc.hasNextLine()) {
+        while (true) {
+            assert sc != null;
+            if (!sc.hasNextLine()) break;
             tmpLines.add(sc.nextLine());
         }
-
+        int nbLines = 1;
         for(String tmpLine : tmpLines) {
             if(tmpLine.equals("") || tmpLine.contains("@")){
                 continue;
             }
-            this.getLines().add(tmpLine);
+            tmpLine = tmpLine.replace("\t", "");
+            this.getLines().put(tmpLine, nbLines);
+            nbLines++;
         }
+
+        this.setLines(this.sortByValue());
+    }
+
+    public HashMap<String, Integer> sortByValue() {
+        // Create a list from elements of HashMap
+        List<Map.Entry<String, Integer>> list = new LinkedList<>(this.getLines().entrySet());
+
+        // Sort the list using lambda expression
+        list.sort((i1, i2) -> i1.getValue().compareTo(i2.getValue()));
+
+        // put data from sorted list to hashmap
+        HashMap<String, Integer> temp = new LinkedHashMap<>();
+        for (Map.Entry<String, Integer> aa : list) {
+            temp.put(aa.getKey(), aa.getValue());
+        }
+        return temp;
     }
 
     @Override
