@@ -41,7 +41,7 @@ public class Parser {
             String hexInstruction;
             try {
                 if (line.charAt(0) != '.') {
-                    hexInstruction = this.readInstructionAndConvertToHex(line);
+                    hexInstruction = this.readInstructionAndConvertToHex(line, (Integer) entry.getValue());
                 } else {
                     continue;
                 }
@@ -56,8 +56,8 @@ public class Parser {
         this.getOutput().write();
     }
 
-    private String readInstructionAndConvertToHex(String line) throws UnkwnonInstructionException, ErrorOnInstruction {
-        Instruction instructions = detectInstruction(line);
+    private String readInstructionAndConvertToHex(String line, int currentLine) throws UnkwnonInstructionException, ErrorOnInstruction {
+        Instruction instructions = detectInstruction(line, currentLine);
         if (instructions == null) {
             throw new UnkwnonInstructionException(line.split(" ")[0] + " est une instruction inconnue");
         }
@@ -66,12 +66,12 @@ public class Parser {
     }
 
 
-    public Instruction detectInstruction(String line) throws ErrorOnInstruction {
+    public Instruction detectInstruction(String line, int currentLine) throws ErrorOnInstruction {
         String[] args = line.split(" ");
         String opCode = args[0];
         try {
             if (opCode.charAt(0) == 'b') {
-                return new B(line);
+                return new B(line, currentLine, this.getFileToParse().getLines());
             }
             return switch (opCode) {
                 case "adc" -> new Adc(line);
@@ -90,7 +90,7 @@ public class Parser {
                 case "mvn" -> new Mvn(line);
                 case "orr" -> new Orr(line);
                 case "ror" -> new Ror(line);
-                case "rsb" -> new Rsb(line);
+                case "rsbs" -> new Rsb(line);
                 case "sbc" -> new Sbc(line);
                 case "subs" -> new Sub(line);
                 case "subi" -> new Subi(line);
@@ -102,11 +102,7 @@ public class Parser {
         }
     }
 
-    public static int calculAddressLabel(String currentLine, String label) {
-        Integer nbLineInstruction = fileToParse.getLines().get(currentLine);
-        Integer nbLineLabel = fileToParse.getLines().get(label);
-        return nbLineLabel - nbLineInstruction - 3;
-    }
+
 
 
 }

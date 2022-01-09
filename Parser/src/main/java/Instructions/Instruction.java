@@ -10,21 +10,21 @@ public abstract class Instruction {
 
     public abstract String convert();
 
-    public String convertBinToHexa(String bin){
+    public String convertBinToHexa(String bin) {
         StringBuilder hexa = new StringBuilder();
-        double dec=0;
+        double dec = 0;
         String[] ind = bin.split("");
 
-        for(int i=0; i<ind.length; i++){
+        for (int i = 0; i < ind.length; i++) {
             int nb = Integer.parseInt(ind[ind.length - 1 - i]);
             dec = dec + (nb * Math.pow(2, i));
         }
 
-        if(Integer.toHexString((int)dec).length() != 4){
+        if (Integer.toHexString((int) dec).length() != 4) {
             hexa.append("0".repeat(Math.max(0, 4 - Integer.toHexString((int) dec).length())));
         }
 
-        hexa.append(Integer.toHexString((int)dec));
+        hexa.append(Integer.toHexString((int) dec));
         return hexa.toString();
 
     }
@@ -49,20 +49,23 @@ public abstract class Instruction {
         return this.convertToBinaryNBits(nb, 8);
     }
 
-     String convertToBinaryNBits(int nb, int nBits) {
+    String convertToBinaryNBits(int nb, int nBits) {
         StringBuilder bin = new StringBuilder();
         String nbBin = Integer.toBinaryString(nb);
         if (nbBin.length() < nBits) {
             bin.append("0".repeat(nBits - nbBin.length()));
+        } else if (nbBin.length() > nBits) {
+            nbBin = nbBin.substring(nbBin.length() - nBits);
         }
-         bin.append(nbBin);
+        bin.append(nbBin);
+
+
         return bin.toString();
     }
 
     /*String convertImm3ToBin(String imm3){
 
     }*/
-
 
 
 }

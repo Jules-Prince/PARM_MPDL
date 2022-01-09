@@ -26,12 +26,7 @@ public class Movs extends Instruction{
         bin.append(nbRegistreBin);
 
         int nbImm = Integer.parseInt(imm.substring(1));
-        String nbImmBin = Integer.toBinaryString(nbImm);
-        if(nbImmBin.length()<8){
-            for(int i=0; i<8-nbRegistreBin.length(); i++)
-                bin.append("0");
-        }
-        bin.append(nbImmBin);
+        bin.append(this.convertToBinary8Bits(nbImm));
 
         return bin.toString();
     }

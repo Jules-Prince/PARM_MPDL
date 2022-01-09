@@ -15,23 +15,32 @@ public class Cmp extends Instruction {
     @Override
     public String convert(){
         StringBuilder bin = new StringBuilder();
-        bin.append("00101");
 
-        int nbRegistre = Integer.parseInt(String.valueOf(registre.charAt(1)));
-        String nbRegistreBin = Integer.toBinaryString(nbRegistre);
-        if(nbRegistreBin.length()<3){
-            for(int i=0; i<3-nbRegistreBin.length(); i++)
-                bin.append("0");
-        }
-        bin.append(nbRegistreBin);
 
-        int nbImm = Integer.parseInt(imm.substring(1));
-        String nbImmBin = Integer.toBinaryString(nbImm);
-        if(nbImmBin.length()<8){
-            for(int i=0; i<8-nbRegistreBin.length(); i++)
-                bin.append("0");
+        if(imm.startsWith("r") || imm.startsWith("R")){
+            bin.append("0100001010");
+
+            int nbRd = Integer.parseInt(String.valueOf(imm.charAt(1)));
+            bin.append(this.convertToBinary3Bits(nbRd));
+
+            int nbRegistre = Integer.parseInt(String.valueOf(registre.charAt(1)));
+            bin.append(this.convertToBinary3Bits(nbRegistre));
+
+        } else {
+            bin.append("00101");
+
+            int nbRegistre = Integer.parseInt(String.valueOf(registre.charAt(1)));
+            String nbRegistreBin = Integer.toBinaryString(nbRegistre);
+            if(nbRegistreBin.length()<3){
+                for(int i=0; i<3-nbRegistreBin.length(); i++)
+                    bin.append("0");
+            }
+            bin.append(nbRegistreBin);
+
+            int nbImm = Integer.parseInt(imm.substring(1));
+            bin.append(this.convertToBinary8Bits(nbImm));
         }
-        bin.append(nbImmBin);
+
 
         return bin.toString();
     }

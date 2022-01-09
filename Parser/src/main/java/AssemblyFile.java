@@ -35,14 +35,18 @@ public class AssemblyFile {
             if (!sc.hasNextLine()) break;
             tmpLines.add(sc.nextLine());
         }
-        int nbLines = 1;
-        for(String tmpLine : tmpLines) {
-            if(tmpLine.equals("") || tmpLine.contains("@")){
+        int nbLines = 0;
+        for (String tmpLine : tmpLines) {
+            if(!tmpLine.startsWith(".")){
+                nbLines++;
+            }
+            if (tmpLine.equals("") || tmpLine.contains("@") || (tmpLine.startsWith(".") && !tmpLine.endsWith(":"))) {
                 continue;
             }
             tmpLine = tmpLine.replace("\t", "");
+            tmpLine = tmpLine.replace(":", "");
             this.getLines().put(tmpLine, nbLines);
-            nbLines++;
+
         }
 
         this.setLines(this.sortByValue());

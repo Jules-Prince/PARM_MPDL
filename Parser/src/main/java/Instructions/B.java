@@ -1,30 +1,55 @@
 package Instructions;
 
+import java.util.Map;
 
 public class B extends Instruction {
     String line;
     String cond;
     String imm;
     String b;
+    private Map<String, Integer> lines;
 
-    public B(String line){
+    private int currentLine;
+
+    public B(String line) {
         this.line = line;
         String[] args = line.split(" ");
-        b =args[0];
-        if(b.length() > 1){
+        b = args[0];
+        if (b.length() > 1) {
             cond = b.substring(1);
         }
         imm = args[1];
+
+        this.currentLine = 0;
     }
 
-    public String convert(){
+    public B(String line, int currentNbLine, Map<String, Integer> lines) {
+        this.line = line;
+        String[] args = line.split(" ");
+        b = args[0];
+        if (b.length() > 1) {
+            cond = b.substring(1);
+        }
+        imm = args[1];
+
+        this.currentLine = currentNbLine;
+        this.lines = lines;
+    }
+
+    public Map<String, Integer> getLines() {
+        return lines;
+    }
+
+    public String convert() {
         StringBuilder bin = new StringBuilder();
 
-        if(b.length() == 1){
+        if (b.length() == 1) {
             bin.append("11100");
-        }
 
-        if(b.length() > 1){
+            int nbImm = Integer.parseInt(String.valueOf(this.calculAddressLabel(imm)));
+
+            bin.append(this.convertToBinaryNBits(nbImm, 11)); //convertir l'argument en bits
+        } else if (b.length() > 1) {
             StringBuilder condBin = new StringBuilder();
             bin.append("1101");
             switch (cond) {
@@ -45,9 +70,17 @@ public class B extends Instruction {
                 case "AL" -> condBin.append("1110");
             }
             bin.append(condBin);
+
+            int nbImm = Integer.parseInt(String.valueOf(this.calculAddressLabel(imm)));
+            bin.append(this.convertToBinary8Bits(nbImm)); //convertir l'argument en bits
         }
-        bin.append(imm); //convertir l'argument en bits
+
 
         return bin.toString();
+    }
+
+    public int calculAddressLabel(String label) {
+        Integer nbLineLabel = this.getLines().get(label);
+        return nbLineLabel - this.currentLine - 2;
     }
 }
