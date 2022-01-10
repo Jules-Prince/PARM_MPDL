@@ -25,15 +25,25 @@ public class B extends Instruction {
 
     public B(String line, int currentNbLine, Map<String, Integer> lines) {
         this.line = line;
+        this.lines = lines;
+        this.currentLine = currentNbLine;
+
         String[] args = line.split(" ");
         b = args[0];
         if (b.length() > 1) {
             cond = b.substring(1);
         }
         imm = args[1];
+    }
 
-        this.currentLine = currentNbLine;
-        this.lines = lines;
+    public void setLine(String line) {
+        this.line = line;
+        String[] args = line.split(" ");
+        b = args[0];
+        if (b.length() > 1) {
+            cond = b.substring(1);
+        }
+        imm = args[1];
     }
 
     public Map<String, Integer> getLines() {
